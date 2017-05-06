@@ -74,20 +74,20 @@ public class ReactVectorDrawableAndroidManager extends ViewGroupManager<Relative
         draw = ResourcesCompat.getDrawable(view.getContext(), resourceIdent);
         return draw;
         //Fix bug with Animations in Android >= 5.0
-        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.LOLLIPOP)
-            draw = ResourcesCompat.getDrawable(view.getContext(), resourceIdent);
-        else{
-            try {
-                draw = VectorDrawable.getDrawable(view.getContext(), resourceIdent);
-            } catch (IllegalArgumentException e1) {
-                try {
-                    draw = AnimatedVectorDrawable.getDrawable(view.getContext(), resourceIdent);
-                } catch (IllegalArgumentException e2) {
-                    throw new JavascriptException(e2.toString());
-                }
-            }
-        }
-        return draw;
+//         if (Build.VERSION.SDK_INT < Build.VERSION_CODES.LOLLIPOP)
+//             draw = ResourcesCompat.getDrawable(view.getContext(), resourceIdent);
+//         else{
+//             try {
+//                 draw = VectorDrawable.getDrawable(view.getContext(), resourceIdent);
+//             } catch (IllegalArgumentException e1) {
+//                 try {
+//                     draw = AnimatedVectorDrawable.getDrawable(view.getContext(), resourceIdent);
+//                 } catch (IllegalArgumentException e2) {
+//                     throw new JavascriptException(e2.toString());
+//                 }
+//             }
+//         }
+//         return draw;
     }
 
     @ReactProp(name = PROP_VANI)
