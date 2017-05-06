@@ -71,6 +71,8 @@ public class ReactVectorDrawableAndroidManager extends ViewGroupManager<Relative
             throw new JavascriptException("Invalid resourceName");
 
         Drawable draw;
+        draw = ResourcesCompat.getDrawable(view.getContext(), resourceIdent);
+        return draw;
         //Fix bug with Animations in Android >= 5.0
         if (Build.VERSION.SDK_INT < Build.VERSION_CODES.LOLLIPOP)
             draw = ResourcesCompat.getDrawable(view.getContext(), resourceIdent);
